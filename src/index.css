@@ -1,13 +1,83 @@
 body {
+  position:relative;
+  height:100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding:0;
+  background-color:darkcyan;
+  display:grid;
+  place-content: center;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.wrapper{
+  position: relative;
+  width:50vh;
+  height:50vh;
+  perspective:1000px;
+}
+
+.container{
+  width:100%;
+  height:100%;
+  background-color: rgb(255, 255, 255);
+  display:flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  justify-content: space-around;
+  border-radius: 20px;
+  border:1px double darkgoldenrod;
+  transform:rotateX(90deg) translateZ(-100px) scale(0);
+  animation:cool 1s linear forwards ;
+  box-shadow: 0.5em 0.5em 5px rgba(0, 0, 0, 0.103);
+}
+
+
+@keyframes cool{
+  0%{
+    transform:rotateX(0deg) translateY(1000px) translateZ(-100px) scale(0)
+  }
+  25%{
+    transform:rotateX(-360deg) translateY(0) translateZ(-75px) scale(0.25);
+  }
+  50%{
+    transform:rotateX(-720deg) translateZ(-50px) scale(0.5);
+  }
+  75%{
+    transform:rotateX(-1080deg) translateZ(-25px) scale(0.75);
+  }
+  100%{
+    transform:rotateX(-1440deg) translateZ(0px) scale(1);
+  }
+}
+/* .container:hover{
+  transform:rotateX(0deg);
+} */
+.header{
+  font-family: 'Roboto', sans-serif;
+  width:100%;
+  text-align: center;
+}
+
+.header span{
+  font-size:5em;
+  text-shadow: 0.1em 0.1em 6px rgba(0, 0, 0, 0.151);
+}
+
+.btn{
+  display:flex;
+  justify-content: space-around;
+  perspective: 500px;
+}
+
+.btn1,.btn2{
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.055);
+}
+
+
+
+
