@@ -1,11 +1,8 @@
 body {
-  position:relative;
-  height:100vh;
+  min-height:100vh;
   margin: 0;
   padding:0;
   background-color:darkcyan;
-  display:grid;
-  place-content: center;
 }
 
 
@@ -14,10 +11,16 @@ code {
     monospace;
 }
 
+#root{
+  height:100vh;
+  display:grid;
+  place-items: center;
+}
+
 .wrapper{
   position: relative;
-  width:50vh;
-  height:50vh;
+  width:min(75%,25em);
+  height:50%;
   perspective:1000px;
 }
 
@@ -39,7 +42,7 @@ code {
 
 @keyframes cool{
   0%{
-    transform:rotateX(0deg) translateY(1000px) translateZ(-100px) scale(0)
+    transform:rotateX(0deg) translateY(100vh) translateZ(-100px) scale(0)
   }
   25%{
     transform:rotateX(-360deg) translateY(0) translateZ(-75px) scale(0.25);
